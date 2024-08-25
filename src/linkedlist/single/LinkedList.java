@@ -40,7 +40,7 @@ public class LinkedList<T> implements List<T> {
     @Override
     public void add(int index, T data) {
         if (index < 0 || index > size) {
-            throw new RuntimeException("Invalid index: " + index + ". Index must be between 0 and " + size + ".");
+            throw new IndexOutOfBoundsException("Invalid index: " + index + ". Index must be between 0 and " + size + ".");
         }
         Node<T> newNode = new Node<>(data);
         if (index == 0) {
@@ -68,7 +68,7 @@ public class LinkedList<T> implements List<T> {
     @Override
     public void remove(int index) {
         if (index < 0 || index >= size) {
-            throw new RuntimeException("Invalid index: " + index + ". Index must be between 0 and " + (size - 1) + ".");
+            throw new IndexOutOfBoundsException("Invalid index: " + index + ". Index must be between 0 and " + (size - 1) + ".");
         }
 
         if (index == 0) {
